@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-directive-example';
-  isVisible = true;
+  isVisible = false;
   list: { title: string }[] = [
     { title: 'Tour of Heros' },
     { title: 'CLI Docutment' },
@@ -17,4 +17,15 @@ export class AppComponent {
     color: 'green',
   }
   color = 'aqua';
+
+  buttonName = '보이기';
+  toggle(): void {
+    this.isVisible = !this.isVisible;
+    if (this.isVisible) {
+      this.buttonName = '감추기';
+    } else {
+      this.buttonName = '보이기';
+    }
+  }
+
 }
